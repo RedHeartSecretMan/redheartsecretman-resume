@@ -1,4 +1,4 @@
-<h1 align="center">王昊 Wang Hao · 3D Résumé</h1>
+<h1 align="center">Wang Hao · 3D Résumé</h1>
 
 <p align="center"><b>滚动即运镜的 3D 个人简历与作品集。</b></p>
 
