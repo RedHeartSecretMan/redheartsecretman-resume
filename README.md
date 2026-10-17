@@ -1,3 +1,23 @@
+# 王昊 Wang Hao · 3D 简历
+
+在线访问：<https://redheartsecretman.github.io/wanghao-3d-resume/>
+
+本仓库 fork 自 [dayinji/sen-3d-resume](https://github.com/dayinji/sen-3d-resume)，履历与作品内容已替换为王昊的个人信息。改内容只需动以下文件（路径相对 `web/`）：
+
+| 内容 | 文件 |
+| --- | --- |
+| 首屏介绍与角标 | `src/App.tsx` |
+| 履历时间轴（5 条，对应模型里的 5 个镜头锚点） | `src/ui/Resume.tsx` |
+| 作品画廊 | `src/data/works.ts` |
+| 作品详情 | `src/content/works/<slug>.md` |
+
+推送到 `main` 后，GitHub Actions 会自动构建并发布到 GitHub Pages。
+
+> 人物模型 `web/public/models/me.glb` 仍是上游作者的个人形象，不属于 MIT 授权范围（见 [`NOTICE`](NOTICE)），正式公开前应替换为自己的模型。
+
+---
+
+## 上游项目说明
 <h1 align="center">About Sen · 3D 个人简历</h1>
 
 <p align="center">

@@ -1,15 +1,17 @@
 ---
-title: dag-skill · 多智能体 Spec-and-Ticket DAG 协同编排
+title: dag-skill
 year: 2026
-role: 独立作者 / 协议与工具链设计
-tags: [Multi-Agent, Spec & Ticket, Git Worktree, Code Review, CAS]
+role: 作者
+tags: [Python, 多 Agent, Git]
 link: https://github.com/RedHeartSecretMan/dag-skill
 ---
 
-`dag-skill` 是面向 Git 工程项目的确定性多智能体协同调度技能（Agent Skill），通过 **Coordinator Agent** 与单票据 **Execution Agent** 分离架构，管控复杂软件需求从 Spec 到 Ticket DAG 的全生命周期交付。
+在 Git 项目中协调执行已批准的 Spec-and-Ticket 依赖图。Coordinator Agent 负责调度、验收与集成；每个 Execution Agent 一次只处理一个 Ticket，从实现、验证到评审与修复。
 
-## 核心机制
+2026 年 8 月开始，已发布 v0.1.0 至 v0.4.2。
 
-- **定义绑定与校验**：通过 `validate_definition_index.py` 确定性校验 `.dag/definition-index.json` 与输入 Blob，杜绝执行期漂移。
-- **工作区隔离与 TDD 闭环**：每个 Ticket 分配独立分支与 Worktree，强制执行 `$tdd` 实现、目标门禁验证与 `$code-review` 独立审查。
-- **原子化 CAS 集成转移**：通过 `promote_local_transition.py` 核验冻结证据并以 Compare-And-Swap（CAS）推进集成分支，支持本地或远端镜像安全恢复。
+## 设计要点
+
+- `.dag/definition-index.json` 是唯一的 DAG 定义索引，由内置脚本确定性校验。
+- 每个新的候选提交都重新评审；集成分支通过 compare-and-swap 推进并回读核对。
+- Execution Agent 只返回 `Ready for Acceptance`、`Needs Decision`、`Externally Blocked` 三种结果。

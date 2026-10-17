@@ -26,13 +26,13 @@ const COPY = {
   en: {
     title: 'About Wang Hao',
     paragraphs: [
-      "I'm Wang Hao — an AI systems engineer and open-source builder guided by 'What → Why → How'. I focus on making complex AI systems trustworthy, inspectable, and reproducible — from Rust + CUDA LLM inference engines to evidence-first multi-agent workflows.",
+      "I'm Wang Hao, an AI systems engineer who works from What → Why → How. I build complex AI systems to be trustworthy, inspectable, and reproducible: a Rust + CUDA LLM inference engine, and agent skills where every number carries its source.",
     ],
   },
   zh: {
     title: 'About Wang Hao',
     paragraphs: [
-      '我是王浩（Wang Hao）——一名遵循「What → Why → How」的 AI 系统与智能体工程师。我专注于把复杂的 AI 系统做得可靠、可解释、可复现，长期深耕 Rust + CUDA 大模型推理引擎、确定性 Agent 工具链与多智能体协同工作流。',
+      '我是王昊，一名按「What → Why → How」思考的 AI 系统工程师。我把复杂的 AI 系统做得可靠、可解释、可复现：用 Rust + CUDA 写大模型推理引擎，也做让每个数字都能追溯来源的 Agent Skills。',
     ],
   },
 }
@@ -170,12 +170,12 @@ export default function App() {
         <span className="hero-mark bl">+</span>
         <span className="hero-mark br">+</span>
         <div className="hero-meta hm-tl">
-          <span className="hm-name">Wang Hao 王浩</span>
-          <span>AI Systems &amp; Agent Engineer</span>
+          <span className="hm-name">Wang Hao 王昊</span>
+          <span>AI Systems Engineer</span>
         </div>
         <div className="hero-meta hm-tr">Portfolio — 2026</div>
         <div className="hero-meta hm-bl">What · Why · How</div>
-        <div className="hero-meta hm-right">Rust · CUDA · Agent</div>
+        <div className="hero-meta hm-right">Rust · Python · CUDA</div>
       </motion.div>
 
       {/* 全屏胶片噪点蒙层（multiply 混合） */}

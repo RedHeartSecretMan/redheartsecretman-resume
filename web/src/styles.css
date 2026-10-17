@@ -296,7 +296,7 @@ canvas {
   color: var(--ink);
 }
 
-/* 正文内 ZOOOP 链接：容器是 pointer-events:none，链接需单独开启可点 */
+/* 正文 / 履历内链接：容器是 pointer-events:none，链接需单独开启可点 */
 .about-link {
   pointer-events: auto;
   color: inherit;
@@ -390,7 +390,7 @@ canvas {
 }
 
 .tl-entry:last-child {
-  /* 末条（zooop）尾部空间：与 .resume 底部 padding 合计约 70vh，
+  /* 末条尾部空间：与 .resume 底部 padding 合计约 70vh，
      使滚到底时末条顶部正好停在视口 30vh（NODE_LINE）处、动画走满第 250 帧 */
   padding-bottom: 38vh;
 }
@@ -425,25 +425,6 @@ canvas {
   font-weight: 600;
   line-height: 1.25;
   color: var(--ink);
-}
-
-/* HOTSAR / 坏打印机 logo：黑色线稿放在米色卡片上，保证可见且保留品牌原色 */
-.tl-logo-chip {
-  flex: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  padding: 5px;
-  background: var(--ink);
-  border-radius: 9px;
-}
-
-.tl-logo-chip img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 
 .tl-role {
@@ -490,22 +471,6 @@ canvas {
 }
 
 /* 自媒体头像 logo */
-.tl-group-logo {
-  flex: none;
-  width: 36px;
-  height: 36px;
-  border-radius: 9px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.tl-group-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
 .tl-group-sub {
   font-size: 12px;
   font-weight: 400;
@@ -544,24 +509,6 @@ canvas {
   border-color: rgba(244, 241, 234, 0.4);
   background: rgba(244, 241, 234, 0.06);
   transform: translateY(-2px);
-}
-
-/* ZOOOP 动态 logo */
-.zooop-logo-link {
-  pointer-events: auto;
-  display: inline-flex;
-  color: var(--ink);
-  transition: color 0.2s ease;
-}
-
-.zooop-logo-link:hover {
-  color: #ffd9b3;
-}
-
-.zooop-logo {
-  display: block;
-  height: 20.8px;
-  width: auto;
 }
 
 /* 中文履历：行距放宽一点更耐读 */

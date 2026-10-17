@@ -1,9 +1,9 @@
 ---
-title: MMDetection3D · 三维点云与多模态目标检测
+title: MMDetection3D 实验
 year: 2024
-role: 算法研究与工程实践
-tags: [3D Vision, PointCloud, PyTorch, Autonomous Driving]
+role: Fork
+tags: [PyTorch, 3D 检测]
 link: https://github.com/RedHeartSecretMan/mmdetection3d
 ---
 
-围绕三维点云（LiDAR）与多模态融合场景，基于 `MMDetection3D` 探索室内外 3D 目标检测、BEV 感知与底层算子部署流程。
+Fork 自 OpenMMLab 的 [MMDetection3D](https://github.com/open-mmlab/mmdetection3d)，2024 年用于三维目标检测实验。

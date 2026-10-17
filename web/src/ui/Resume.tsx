@@ -1,21 +1,14 @@
 import { motion } from 'framer-motion'
-import { ZooopLogo } from './ZooopLogo'
 import { SOCIAL_ICONS } from './SocialIcons'
 import { FOCUS_POINTS } from '../data/focusPoints'
 
-const SOCIAL_LINKS = [
-  {
-    id: 'github',
-    label: 'GitHub',
-    href: 'https://github.com/RedHeartSecretMan',
-  },
-]
+const GH = 'https://github.com/RedHeartSecretMan'
 
-// 履历数据（双语）。英文为译稿，可按需润色。
+const SOCIAL_LINKS = [{ id: 'github', label: 'GitHub', href: GH }]
+
+// 履历数据（双语）。版本、提交量与性能数据取自各仓库 README / Release（2026-10）。
 interface ResumeGroup {
   heading?: string
-  logo?: string
-  logoImg?: string
   sub?: string
   link?: string
   items?: string[]
@@ -25,7 +18,6 @@ interface ResumeEntry {
   period: string
   place: string
   role?: string
-  logo?: { src: string; alt: string }
   points?: string[]
   groups?: ResumeGroup[]
 }
@@ -34,60 +26,69 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
     title: 'Résumé',
     entries: [
       {
-        period: '2020 – 2023',
-        place: 'Systems & Algorithm Foundations',
-        role: 'C / C++ · Python · Computer Vision & Deep Learning',
+        period: '2022 – 2023',
+        place: 'Notes & Foundations',
+        role: 'Machine learning · Algorithms · Optics',
         points: [
-          'Built solid foundations in systems programming, data structures, and deep learning architectures',
-          'Maintained open-source engineering notes and cross-language algorithm repositories',
+          'Built a long-running notebook on ML, data structures & algorithms, and paper walkthroughs',
+          'Wrote topic notes on optical phase retrieval, Zernike polynomials, and color spaces',
+        ],
+        groups: [{ heading: 'LearnNoteBook', sub: 'Markdown · Jupyter', link: `${GH}/LearnNoteBook` }],
+      },
+      {
+        period: '2023',
+        place: 'go_subtitle',
+        role: 'Author · subtitle generator',
+        points: [
+          'Generates subtitles from audio / video in batch with Whisper and FFmpeg, including English translation',
+          'Published to PyPI as go-subtitle, usable from the CLI or as a Python API',
+        ],
+        groups: [{ heading: 'Repository ↗', sub: 'Python · Whisper', link: `${GH}/go_subtitle` }],
+      },
+      {
+        period: '2024 – 2026',
+        place: 'Vision & Local LLM Tooling',
+        role: 'MMDetection3D · Ollama',
+        points: [
+          'Ran 3D object detection experiments on an MMDetection3D fork',
+          'Moved a PotPlayer subtitle-translation plugin to the native Ollama API with sliding-window context',
+        ],
+        groups: [
+          { heading: 'PotPlayer_ollama_Translate', sub: 'AngelScript', link: `${GH}/PotPlayer_ollama_Translate` },
         ],
       },
       {
-        period: '2023 – 2024',
-        place: 'Multimodal AI & 3D Perception',
-        role: 'AIGC · Whisper Speech · 3D Object Detection',
+        period: '2026.07 – Now',
+        place: 'vllm-oxide',
+        role: 'Author · Rust LLM inference engine',
         points: [
-          'Created go_subtitle (published on PyPI) for automated audio/video subtitle generation & translation via Whisper',
-          'Explored 3D vision (MMDetection3D), Stable Diffusion workflows, and local LLM media translation',
+          'Candle + custom CUDA kernels: continuous batching, chunked prefill, paged KV cache, prefix caching, recompute preemption',
+          'Qwen3-0.6B BF16 on RTX 4080: 29.76 tok/s decode for 1 request, 115.82 tok/s across 4',
+          'Nearly 300 commits, released v0.1.0 → v0.2.0 with reference-checked correctness gates',
         ],
+        groups: [{ heading: 'Repository ↗', sub: 'Rust · CUDA', link: `${GH}/vllm-oxide` }],
       },
       {
-        period: '2025',
-        place: 'High-Throughput LLM Serving & KV Cache',
-        role: 'vLLM · LMCache · GPU Systems',
-        points: [
-          'Deep-dived into high-throughput LLM serving, continuous batching, and distributed KV cache layers',
-          'Focused on GPU kernel efficiency, memory hierarchy optimization, and numerical correctness gates',
-        ],
-      },
-      {
-        period: '2026',
-        place: 'Rust + CUDA LLM Inference Engine',
-        role: 'Creator of vllm-oxide',
+        period: '2026.08 – Now',
+        place: 'Evidence-First Agent Skills',
+        role: 'Author',
         groups: [
           {
-            heading: 'vllm-oxide',
-            sub: 'Rust + Candle + Custom CUDA Kernels',
-            link: 'https://github.com/RedHeartSecretMan/vllm-oxide',
+            heading: 'a-share-research-skill',
+            sub: 'v0.4.0',
+            link: `${GH}/a-share-research-skill`,
             items: [
-              'Implemented continuous batching, paged KV cache, shared-prefix caching, and copy-on-write preemption',
-              'Validated BF16 inference on RTX 4080 with strict reference correctness gates',
+              '12 research tasks and 6 fixed workflows behind a single deterministic run --request CLI',
+              'Ambiguous identities fail closed; source failures never switch sources silently',
             ],
           },
-        ],
-      },
-      {
-        period: '2026 – Now',
-        place: 'Evidence-First Agent Systems',
-        role: 'Creator of dag-skill & a-share-research-skill',
-        groups: [
           {
-            heading: 'RedHeartSecretMan',
-            sub: 'What → Why → How',
-            link: 'https://github.com/RedHeartSecretMan',
+            heading: 'dag-skill',
+            sub: 'v0.4.2',
+            link: `${GH}/dag-skill`,
             items: [
-              'dag-skill: Spec-and-Ticket DAG multi-agent orchestration with evidence-backed review & CAS integration',
-              'a-share-research-skill: Deterministic financial research CLI with explicit provenance & fail-closed identity',
+              'Coordinator / Execution agents deliver approved Spec-and-Ticket DAGs',
+              'Each candidate gets fresh code review; integration advances by compare-and-swap',
             ],
             links: SOCIAL_LINKS,
           },
@@ -99,60 +100,69 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
     title: 'Résumé',
     entries: [
       {
-        period: '2020 – 2023',
-        place: '系统编程与算法筑基',
-        role: 'C / C++ · Python · 深度学习与计算机视觉',
+        period: '2022 – 2023',
+        place: '学习笔记与知识体系',
+        role: '机器学习 · 数据结构与算法 · 光学',
         points: [
-          '深耕系统编程、数据结构与深度学习底层机制，构建跨语言工程代码库与技术笔记体系',
-          '践行「What → Why → How」工程方法论，坚持以契约和证据驱动系统设计',
+          '长期整理机器学习主线 / 支线、数据结构与算法、论文串讲等系统笔记',
+          '专题记录光学相位恢复、Zernike 多项式、色彩空间等研究内容',
+        ],
+        groups: [{ heading: 'LearnNoteBook', sub: 'Markdown · Jupyter', link: `${GH}/LearnNoteBook` }],
+      },
+      {
+        period: '2023',
+        place: 'go_subtitle',
+        role: '作者 · 音视频字幕生成工具',
+        points: [
+          '基于 Whisper 与 FFmpeg，从音频或视频批量生成字幕，支持英文翻译',
+          '以 go-subtitle 发布到 PyPI，提供命令行与 Python API 两种用法',
+        ],
+        groups: [{ heading: '查看仓库 ↗', sub: 'Python · Whisper', link: `${GH}/go_subtitle` }],
+      },
+      {
+        period: '2024 – 2026',
+        place: '视觉与本地大模型工具',
+        role: 'MMDetection3D · Ollama',
+        points: [
+          '在 MMDetection3D 分支上开展三维目标检测实验',
+          '将 PotPlayer 字幕翻译插件迁移到 Ollama 原生 API，并加入滑动窗口上下文',
+        ],
+        groups: [
+          { heading: 'PotPlayer_ollama_Translate', sub: 'AngelScript', link: `${GH}/PotPlayer_ollama_Translate` },
         ],
       },
       {
-        period: '2023 – 2024',
-        place: '多模态 AI 与 3D 视觉探索',
-        role: 'AIGC · 语音识别 · 3D 目标检测',
+        period: '2026.07 – 至今',
+        place: 'vllm-oxide',
+        role: '作者 · Rust 大模型推理引擎',
         points: [
-          '开源并发布 PyPI 工具包 go_subtitle：基于 Whisper 实现音视频自动字幕提取与多语种翻译',
-          '探索 3D 视觉感知（MMDetection3D）、扩散生成模型与本地大模型实时字幕翻译工具链',
+          '基于 Candle 与自定义 CUDA kernel，实现连续批处理、分块预填充、分页 KV Cache、前缀缓存与重算抢占',
+          'Qwen3-0.6B BF16 在 RTX 4080 上单请求解码 29.76 token/s，4 请求 115.82 token/s',
+          '近 300 次提交，发布 v0.1.0 → v0.2.0，以参考实现对照建立正确性门禁',
         ],
+        groups: [{ heading: '查看仓库 ↗', sub: 'Rust · CUDA', link: `${GH}/vllm-oxide` }],
       },
       {
-        period: '2025',
-        place: '高吞吐大模型推理与缓存架构',
-        role: 'vLLM · LMCache · GPU 系统优化',
-        points: [
-          '深入研究高吞吐 LLM 推理引擎架构、Continuous Batching 调度与分布式 KV Cache 加速层',
-          '聚焦 CUDA 算子优化、显存分页管理以及与参考实现对齐的数值正确性门禁',
-        ],
-      },
-      {
-        period: '2026',
-        place: 'Rust + CUDA 大模型推理引擎',
-        role: 'vllm-oxide 作者',
+        period: '2026.08 – 至今',
+        place: '证据优先的 Agent Skills',
+        role: '作者',
         groups: [
           {
-            heading: 'vllm-oxide',
-            sub: 'Rust + Candle + 自定义 CUDA 算子',
-            link: 'https://github.com/RedHeartSecretMan/vllm-oxide',
+            heading: 'a-share-research-skill',
+            sub: 'v0.4.0',
+            link: `${GH}/a-share-research-skill`,
             items: [
-              '使用 Rust 从零构建支持 Continuous Batching、Paged KV Cache、Prefix Caching 与 CoW 抢占的推理引擎',
-              '在单卡 RTX 4080 完成 BF16 实测验证，建立严格的数值、行为与性能基准门禁',
+              '12 类研究任务与 6 个固定方案，统一由确定性 CLI run --request 执行',
+              '证券身份有歧义时失败关闭，来源失败不静默切换，结果保留完整谱系',
             ],
           },
-        ],
-      },
-      {
-        period: '2026 – 至今',
-        place: '证据驱动的智能体工程体系',
-        role: 'dag-skill & a-share-research-skill 作者',
-        groups: [
           {
-            heading: 'RedHeartSecretMan',
-            sub: 'What → Why → How',
-            link: 'https://github.com/RedHeartSecretMan',
+            heading: 'dag-skill',
+            sub: 'v0.4.2',
+            link: `${GH}/dag-skill`,
             items: [
-              'dag-skill：基于 Spec-and-Ticket DAG 的多智能体协同调度、证据审查与 CAS 集成协议',
-              'a-share-research-skill：具备显式数据溯源、失败关闭身份校验与可复现估值谱系的确定性研究工具',
+              'Coordinator / Execution Agent 分工交付已批准的 Spec-and-Ticket DAG',
+              '每个候选提交独立评审，集成分支以 compare-and-swap 推进',
             ],
             links: SOCIAL_LINKS,
           },
@@ -163,7 +173,6 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
 }
 
 // 履历条目依次对应 glb 里的聚焦锚点（相机停靠点），顺序须与 entries 一致。
-// 名单是唯一真源，见 data/focusPoints.ts（Scene.tsx 也从那里取）。
 const POINT_ORDER = FOCUS_POINTS
 
 const EASE = [0.22, 1, 0.36, 1]
@@ -177,33 +186,17 @@ const itemV = {
 }
 
 function Group({ group }: { group: ResumeGroup }) {
-  const heading =
-    group.logo === 'zooop' ? (
-      <a
-        className="zooop-logo-link"
-        href={group.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="ZOOOP"
-      >
-        <ZooopLogo className="zooop-logo" animated />
-      </a>
-    ) : group.link ? (
-      <a className="about-link" href={group.link} target="_blank" rel="noopener noreferrer">
-        {group.heading}
-      </a>
-    ) : (
-      <span>{group.heading}</span>
-    )
+  const heading = group.link ? (
+    <a className="about-link" href={group.link} target="_blank" rel="noopener noreferrer">
+      {group.heading}
+    </a>
+  ) : (
+    <span>{group.heading}</span>
+  )
 
   return (
     <motion.div className="tl-group" variants={itemV}>
       <div className="tl-group-head">
-        {group.logoImg && (
-          <span className="tl-group-logo">
-            <img src={group.logoImg} alt={group.heading || ''} loading="lazy" />
-          </span>
-        )}
         {heading}
         {group.sub && <span className="tl-group-sub">{group.sub}</span>}
       </div>
@@ -249,20 +242,11 @@ function Entry({ entry, index }: { entry: ResumeEntry; index: number }) {
       viewport={{ once: true, margin: '-12% 0px -12% 0px' }}
     >
       <motion.span className="tl-dot" variants={itemV} aria-hidden="true" />
-      {/* tl-body 包住文字内容（点保持在外做时间轴标记）：移动端可给它加卡片衬底，
-          且它紧贴内容高度，不含 tl-entry 用于排布的大 padding。
-          用普通 div（非 motion）：framer 变体经 React context 穿透它，叶子元素仍是
-          tl-entry 的直接 stagger 子级，入场动画与包裹前完全一致。 */}
       <div className="tl-body">
         <motion.div className="tl-period" variants={itemV}>
           {entry.period}
         </motion.div>
         <motion.div className="tl-head" variants={itemV}>
-          {entry.logo && (
-            <span className="tl-logo-chip">
-              <img src={entry.logo.src} alt={entry.logo.alt} loading="lazy" />
-            </span>
-          )}
           <h3 className="tl-place">{entry.place}</h3>
         </motion.div>
         {entry.role && (

@@ -297,7 +297,7 @@ function Man2({
     const a = 1 - Math.pow(cam.damping, dt)
 
     // 1) 由履历锚点（文档坐标）算连续索引 s：
-    //    顶部 s≈-1，sysu 居中 s=0，hotsar=1 … zooop=4
+    //    顶部 s≈-1，第 1 条履历居中 s=0 … 第 M 条 s=M-1
     if (!anchorEls.current) {
       anchorEls.current = POINTS.map((n) => document.querySelector(`[data-point="${n}"]`))
     }
@@ -317,7 +317,7 @@ function Man2({
       const refLine = window.scrollY + window.innerHeight * NODE_LINE
       const tops = els.map((el: any) => el.getBoundingClientRect().top + window.scrollY)
       if (refLine <= tops[0]) {
-        // 顶部 → sysu 的渐入段：scrollY=0 时 s=-1（第 0 帧），sysu 到达参考线时 s=0
+        // 顶部 → 第 1 条履历的渐入段：scrollY=0 时 s=-1（第 0 帧），到达参考线时 s=0
         const heroScroll = Math.max(1, tops[0] - window.innerHeight * NODE_LINE)
         sTarget = -1 + dwell(THREE.MathUtils.clamp(window.scrollY / heroScroll, 0, 1))
       } else if (refLine >= tops[M - 1]) {

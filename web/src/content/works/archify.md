@@ -1,9 +1,9 @@
 ---
-title: archify · 可验证架构、时序与数据流图生成技能
+title: archify
 year: 2026
-role: 开源维护与定制
-tags: [Agent Skill, Architecture Diagram, Self-Contained HTML]
+role: Fork
+tags: [Agent Skill, 架构图]
 link: https://github.com/RedHeartSecretMan/archify
 ---
 
-`archify` 是一个面向工程架构可视化的 Agent Skill，用于生成自包含、带交互动效且支持高清导出的系统架构图、工作流图、时序图、数据流图与生命周期图。
+Fork 自 [tt-a1i/archify](https://github.com/tt-a1i/archify)：一个生成架构图、工作流图、时序图、数据流图和生命周期图的 Agent Skill，输出自包含、带动效的 HTML。用于给自己的项目画文档图。
