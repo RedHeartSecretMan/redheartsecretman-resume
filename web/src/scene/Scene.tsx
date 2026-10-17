@@ -162,7 +162,9 @@ function Man2({
         o.receiveShadow = true
       }
       if (o.isCamera) glbCam = o
-      // 首页锚点：兼容旧名 focus-start 与 intro3d 统一命名 focus-0
+      // 模型自带的脸部贴纸网格（sticker*）不属于本简历，统一隐藏
+      if (/^sticker/i.test(o.name)) o.visible = false
+      // 首页锚点：兼容 focus-start 与 focus-0 两种命名
       if (o.name === 'focus-start' || o.name === 'focus-0') startPoint = o
       if (o.name === 'focus-works') focusNode = o
       if (POINTS.includes(o.name)) pmap[o.name] = o
@@ -192,11 +194,11 @@ function Man2({
       eyes.forEach((e) => (e.sx = 0))
     }
     const pts = POINTS.map((n) => pmap[n] || null)
-    // 作品区锚点：优先 focus-works（旧 glb）；缺省（intro3d 统一命名不导）则复用末时间轴节点 focus-M。
+    // 作品区锚点：优先 focus-works；缺省则复用末时间轴节点 focus-M。
     const works = focusNode || pts[pts.length - 1] || null
     // 首页锚点：focus-start / focus-0；都没有则回退首个时间轴节点。
     const start = startPoint || pts[0] || null
-    // 逐锚点景深参数（intro3d 导出写入 userData/extras）：dofBokeh 虚化强度、dofFocusRange 清晰范围、
+    // 逐锚点景深参数（写在 userData/extras 中）：dofBokeh 虚化强度、dofFocusRange 清晰范围、
     // dofEnabled 开关（关→有效 bokeh 记 0）。has=false（老 glb 无这些字段）→ Post2 走原全局帧混合，行为不变。
     const ud = (o: any): any => o?.userData ?? {}
     const hasDofParams = [...pts, start, works].some((o) => ud(o).dofBokeh !== undefined)
@@ -400,8 +402,8 @@ function Man2({
       }
     }
 
-    // 3b) 景深：glb 带逐锚点参数（intro3d 导出）时，沿当前连续索引在相邻锚点间插值 bokeh/focusRange，
-    //     写入 refs 供 Post2 直接采用（忠实还原 intro3d）；无参数（老 glb）则写哨兵 -1 → Post2 走原全局帧混合。
+    // 3b) 景深：glb 带逐锚点参数时，沿当前连续索引在相邻锚点间插值 bokeh/focusRange，
+    //     写入 refs 供 Post2 直接采用；无参数（老 glb）则写哨兵 -1 → Post2 走原全局帧混合。
     if (dofBokehRef && dofRangeRef) {
       if (!dof.has) {
         dofBokehRef.current = -1
@@ -415,7 +417,7 @@ function Man2({
           return THREE.MathUtils.lerp(arr[iA] ?? 0, arr[iB] ?? 0, sc - iA)
         }
         dofBokehRef.current = sample(dof.bokeh, dof.startBokeh, dof.worksBokeh)
-        // focusRange 按模型 group 缩放折算到世界单位（scene 被放大 scale 倍，清晰范围需同比放大才与 intro3d 观感一致）。
+        // focusRange 按模型 group 缩放折算到世界单位（scene 被放大 scale 倍，清晰范围需同比放大才与建模时观感一致）。
         dofRangeRef.current = sample(dof.range, dof.startRange, dof.worksRange) * scale
       }
     }
@@ -539,7 +541,7 @@ function Post2({
     const wEnd = THREE.MathUtils.smoothstep(f, post.endBlendFrame, RESUME_FRAMES)
     const w = Math.max(wStart, wEnd)
     if (dofBokehRef && dofBokehRef.current >= 0) {
-      // glb 自带逐锚点景深参数（intro3d 导出）：直接采用，忠实还原 intro3d 的虚化强度/清晰范围（bokeh=0 即该点关景深）。
+      // glb 自带逐锚点景深参数：直接采用，直接使用锚点上的虚化强度/清晰范围（bokeh=0 即该点关景深）。
       e.bokehScale = dofBokehRef.current
       if (e.cocMaterial) e.cocMaterial.focusRange = Math.max(1e-4, dofRangeRef ? dofRangeRef.current : post.focusRange)
     } else {
@@ -575,7 +577,7 @@ function Post2({
 export default function Scene() {
   const focusRef = useRef(new THREE.Vector3(0, 1.3, 0))
   const frameRef = useRef(0)
-  // 逐锚点景深（intro3d 导出的 glb 携带）：Man2 每帧写、Post2 读。dofBokeh=-1 表示无参数 → Post2 走旧全局混合。
+  // 逐锚点景深（glb 可选携带）：Man2 每帧写、Post2 读。dofBokeh=-1 表示无参数 → Post2 走旧全局混合。
   const dofBokehRef = useRef(-1)
   const dofRangeRef = useRef(0.15)
   return (

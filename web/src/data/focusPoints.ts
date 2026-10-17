@@ -9,7 +9,7 @@
 // 即每个节点相隔 FRAMES_PER_NODE 帧；最后一个节点到作品区之间是「作品区」帧段，
 // 长度 = 相机动画总帧数 − 50·M，可长可短（当前 me.glb 是 100 帧的入场+横移运镜）。
 //
-// 命名两种都支持：本仓库自带 glb 用有意义的 slug（下方）；intro3d 一键导出的 glb 用统一编号
+// 锚点可以用有意义的名字，也可以用统一编号
 // `focus-0`(首页) + `focus-1…M`(时间轴)，此时把下面换成 ['focus-1','focus-2',…] 即可。
 // ⚠️ 必须与 glb 里的时间轴 focus 空对象名一一对应、且数量 = Resume.tsx 的 entries 数。
 // 首页锚点 focus-0（或旧名 focus-start）+ 作品区 focus-works 由 Scene.tsx 自动识别，不列在这里。

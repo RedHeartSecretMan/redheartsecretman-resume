@@ -1,10 +1,8 @@
 # AGENTS.md
 
-Project conventions and architecture notes for AI coding assistants live in **[CLAUDE.md](CLAUDE.md)** — read it first.
+Conventions for AI coding assistants live in [CLAUDE.md](CLAUDE.md); read it first.
 
-The repo has three parts: the front-end app in [`web/`](web), the 3D source files in [`blender/`](blender), and the tutorials in [`tutor/`](tutor). **All front-end code paths are relative to `web/`**, and npm commands run inside `web/`.
-
-Quick start:
+The front-end app is in [`web/`](web). All code paths are relative to `web/`, and npm commands run inside `web/`.
 
 ```bash
 cd web
