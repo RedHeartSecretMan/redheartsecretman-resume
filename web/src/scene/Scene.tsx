@@ -162,8 +162,6 @@ function Man2({
         o.receiveShadow = true
       }
       if (o.isCamera) glbCam = o
-      // 模型自带的脸部贴纸网格（sticker*）不属于本简历，统一隐藏
-      if (/^sticker/i.test(o.name)) o.visible = false
       // 首页锚点：兼容 focus-start 与 focus-0 两种命名
       if (o.name === 'focus-start' || o.name === 'focus-0') startPoint = o
       if (o.name === 'focus-works') focusNode = o

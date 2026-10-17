@@ -52,6 +52,20 @@ npm run build      # 类型检查 + 打包到 dist/
 | 镜头停靠点 | `src/data/focusPoints.ts`（数量须与履历条数一致） |
 | 灯光、景深、背景等画面参数 | `src/scene/Scene.tsx` 各组件顶部的常量 |
 
+## 模型与教程
+
+| 资源 | 用途 |
+| --- | --- |
+| [`blender/sen.blend`](blender) | 3D 人物与镜头动画源文件，导出为 `web/public/models/me.glb` |
+| [`tutor/intro3d处理模型教程`](tutor/intro3d处理模型教程/intro3d处理模型教程.md) | 生成并处理人物模型 |
+| [`tutor/眼球教程`](tutor/眼球教程/眼球教程.md) | 制作可跟随鼠标的眼球 |
+| [`tutor/贴纸教程`](tutor/贴纸教程/贴纸教程.md) | 用 AI 生成脸部与场景贴纸 |
+| [`tutor/部署教程`](tutor/部署教程) | GitHub Pages / Cloudflare Pages 部署 |
+| [`web/src/content/works/example.md`](web/src/content/works/example.md) | 作品详情页写法示例 |
+| [`README.en.md`](README.en.md) | 上游英文说明，含换模型与自定义细节 |
+
+替换模型时需保留 `CameraAction`、`focus-0` 到 `focus-5`、`focus-works` 与名称含 `eye` 的网格，否则运镜和眼球跟随会失效。
+
 ## 部署
 
 推送到 `main` 后，[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) 会构建 `web/` 并发布到 GitHub Pages。`vite.config.ts` 使用 `base: './'`，产物也可以放到任意静态托管或子目录。

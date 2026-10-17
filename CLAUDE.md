@@ -46,7 +46,6 @@ There are no tests. After editing, run `npm run build` and check the page in a b
 - One empty per resume entry, listed in `src/data/focusPoints.ts` (`FOCUS_POINTS`). The count must match the entries in `Resume.tsx`.
 - `focus-works` (optional): works focus anchor.
 - Meshes whose names contain `eye`: eyes that follow the cursor.
-- Meshes named `sticker*` are hidden at load time.
 
 ## TypeScript
 
