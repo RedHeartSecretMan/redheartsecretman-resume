@@ -30,7 +30,7 @@
 2. 左侧菜单选 **Workers & Pages**，点 **Create（创建）**。
 3. 选 **Pages** 这个标签页，点 **Connect to Git（连接 Git）**。
 4. 授权 Cloudflare 访问你的 GitHub（第一次会跳转 GitHub 授权，按提示同意即可，可只授权这一个仓库）。
-5. 在列表里选中你的 `sen-3d-resume` 仓库，点 **Begin setup（开始配置）**。
+5. 在列表里选中你的 `wanghao-3d-resume` 仓库，点 **Begin setup（开始配置）**。
 
 ---
 
@@ -119,5 +119,5 @@
 
 ## 下一步
 
-- 想换成自己的内容（姓名 / 模型 / 简历 / 作品）？看仓库根目录的 [`README.md`](../../README.md) 与 [`NOTICE`](../../NOTICE)（原作者个人素材不在开源范围内，记得替换）。
+- 想改内容（姓名 / 模型 / 简历 / 作品）？看仓库根目录的 [`README.md`](../../README.md) 与 [`NOTICE`](../../NOTICE)（个人素材不在开源范围内）。
 - 想了解另一种免费方案？→ [《① 发布到 GitHub Pages》](1-部署到-GitHub-Pages.md)

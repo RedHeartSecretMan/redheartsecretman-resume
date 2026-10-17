@@ -1,7 +1,7 @@
 # 部署教程 ①：发布到 GitHub Pages（免费）
 
-> 目标：把你 fork 的这个 3D 简历，变成一个人人可访问的网址，比如
-> `https://你的用户名.github.io/sen-3d-resume/`。
+> 目标：把这个 3D 简历发布成一个人人可访问的网址，比如
+> `https://你的用户名.github.io/wanghao-3d-resume/`。
 >
 > 你只需要一个 GitHub 账号，**全程点鼠标，不用敲命令**。
 > 想用自己的域名？看另一篇 [《② 部署到 Cloudflare Pages》](2-部署到-Cloudflare-Pages.md)。
@@ -19,8 +19,8 @@
 ## 准备工作
 
 1. 有一个 [GitHub](https://github.com) 账号。
-2. 这个项目已经在**你自己的账号名下**（不是原作者的仓库）。两种常见情况：
-   - **Fork**：在原仓库右上角点 `Fork`，就会在你账号下复制一份。
+2. 这个项目已经在**你自己的账号名下**。两种常见情况：
+   - **Fork**：在仓库右上角点 `Fork`，就会在你账号下复制一份。
    - **自己上传**：新建一个仓库，把代码传上去。
 3. 确认你仓库的**默认分支叫 `main`**（大多数新仓库都是）。自动部署脚本监听的就是 `main` 分支。
 
@@ -63,7 +63,7 @@
    https://你的GitHub用户名.github.io/仓库名/
    ```
 
-   例如原作者的就是 <https://dayinji.github.io/sen-3d-resume/>。
+   例如王昊的就是 <https://redheartsecretman.github.io/wanghao-3d-resume/>。
 
 点开这个网址，你的 3D 简历就上线了 🎉
 
@@ -92,5 +92,5 @@ GitHub Pages 也支持自定义域名（Settings → Pages → Custom domain）�
 
 ## 下一步
 
-- 想换成自己的内容（姓名 / 模型 / 简历 / 作品）？看仓库根目录的 [`README.md`](../../README.md) 里「改造」相关章节，以及 [`NOTICE`](../../NOTICE)（原作者的个人素材不在开源范围内，记得替换）。
+- 想改内容（姓名 / 模型 / 简历 / 作品）？看仓库根目录 [`README.md`](../../README.md) 的「修改内容」与「模型与教程」，以及 [`NOTICE`](../../NOTICE)（个人素材不在开源范围内）。
 - 想用 Cloudflare 部署 / 绑定自定义域名？→ [《② 部署到 Cloudflare Pages》](2-部署到-Cloudflare-Pages.md)

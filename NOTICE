@@ -12,6 +12,6 @@ The following are Wang Hao's personal content, (c) 2026 Wang Hao, all rights res
 
 ## Third-party assets
 
-- `web/public/models/me.glb`: 3D character model from the open-source project this site was built from. It is not covered by MIT; replace it before redistributing.
+- `web/public/models/me.glb` and `blender/wanghao.blend`: 3D character, face stickers and camera animation, adapted from the MIT-licensed project credited in `LICENSE`. They are not covered by MIT; replace them before redistributing.
 - `web/public/fonts/`: Cormorant Upright and Mansalva (Google Fonts, SIL Open Font License).
 - `web/public/textures/env.hdr`: HDR environment map; check its source license before reuse.

@@ -1,20 +1,14 @@
 # 用 intro3d 处理模型：可视化导出你的 me.glb（不用 Blender）
 
 > 目标：不打开 Blender，直接在浏览器里的 **intro3d** 编辑器摆好模型和镜头，
-> 一键导出这个 3D 简历需要的 `me.glb`，替换进你 fork 的项目里。
-
----
-
-## 📺 先看视频
-
-👉 **[点此在 B 站观看视频教程](https://www.bilibili.com/video/BV1oF3U6oELF/)**
+> 一键导出这个 3D 简历需要的 `me.glb`，替换进项目里。
 
 ---
 
 ## 这是在干嘛（一分钟看懂）
 
 这个简历的 3D 背景，本质是一个带**相机动画**和若干**焦点锚点**的 `me.glb`
-（原本要在 Blender 里做，见 [`CLAUDE.md`](../../CLAUDE.md)「Making it yours after a fork」）。
+（也可以在 Blender 里编辑 [`blender/wanghao.blend`](../../blender/wanghao.blend) 后导出，约定见 [`CLAUDE.md`](../../CLAUDE.md)「3D model contract」）。
 **intro3d** 把这套东西变成了网页上的可视化操作：你摆好模型、拉好每个时间线节点的镜头，
 它就按本项目的规范帮你把相机动画和焦点锚点烘焙好，导出成能直接用的 `me.glb`。
 

@@ -4,7 +4,8 @@
 
 <p align="center">
   <a href="https://redheartsecretman.github.io/wanghao-3d-resume/">在线访问</a> ·
-  <a href="https://github.com/RedHeartSecretMan">GitHub</a>
+  <a href="https://github.com/RedHeartSecretMan">GitHub</a> ·
+  <a href="README.en.md">English</a>
 </p>
 
 <p align="center">
@@ -56,13 +57,13 @@ npm run build      # 类型检查 + 打包到 dist/
 
 | 资源 | 用途 |
 | --- | --- |
-| [`blender/sen.blend`](blender) | 3D 人物与镜头动画源文件，导出为 `web/public/models/me.glb` |
+| [`blender/wanghao.blend`](blender/wanghao.blend) | 3D 人物、贴纸与镜头动画源文件，导出为 `web/public/models/me.glb` |
 | [`tutor/intro3d处理模型教程`](tutor/intro3d处理模型教程/intro3d处理模型教程.md) | 生成并处理人物模型 |
 | [`tutor/眼球教程`](tutor/眼球教程/眼球教程.md) | 制作可跟随鼠标的眼球 |
 | [`tutor/贴纸教程`](tutor/贴纸教程/贴纸教程.md) | 用 AI 生成脸部与场景贴纸 |
 | [`tutor/部署教程`](tutor/部署教程) | GitHub Pages / Cloudflare Pages 部署 |
 | [`web/src/content/works/example.md`](web/src/content/works/example.md) | 作品详情页写法示例 |
-| [`README.en.md`](README.en.md) | 上游英文说明，含换模型与自定义细节 |
+| [`README.en.md`](README.en.md) | 英文说明 |
 
 替换模型时需保留 `CameraAction`、`focus-0` 到 `focus-5`、`focus-works` 与名称含 `eye` 的网格，否则运镜和眼球跟随会失效。
 
