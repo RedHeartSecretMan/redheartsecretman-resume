@@ -5,19 +5,9 @@ import { FOCUS_POINTS } from '../data/focusPoints'
 
 const SOCIAL_LINKS = [
   {
-    id: 'douyin',
-    label: '抖音',
-    href: 'https://www.douyin.com/user/MS4wLjABAAAAlmQDgHf0NlbsjrfWENm8LyrIikxSRRq7mzlzQSIStQJkV7Ju52B6A55zw5TUDU5d',
-  },
-  {
-    id: 'bilibili',
-    label: 'B站',
-    href: 'https://space.bilibili.com/275344092?spm_id_from=333.937.0.0',
-  },
-  {
-    id: 'xiaohongshu',
-    label: '小红书',
-    href: 'https://www.xiaohongshu.com/user/profile/5ceba8c8000000000502fd69',
+    id: 'github',
+    label: 'GitHub',
+    href: 'https://github.com/RedHeartSecretMan',
   },
 ]
 
@@ -44,49 +34,64 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
     title: 'Résumé',
     entries: [
       {
-        period: '2013 – 2017',
-        place: 'Sun Yat-sen University',
-        role: 'B.S. in Software Engineering',
-      },
-      {
-        period: '2017 – 2020',
-        place: 'HOTSAR Studio · Shanghai',
-        role: 'Co-founder',
-        logo: { src: `${import.meta.env.BASE_URL}images/hotsar.jpg`, alt: 'HOTSAR' },
+        period: '2020 – 2023',
+        place: 'Systems & Algorithm Foundations',
+        role: 'C / C++ · Python · Computer Vision & Deep Learning',
         points: [
-          'Co-founder · team of 20+',
-          'Clients: Alibaba brands, Tencent, NetEase, DiDi, China Resources, McDonald’s…',
-          'Work: development / creative direction / animation / team management',
+          'Built solid foundations in systems programming, data structures, and deep learning architectures',
+          'Maintained open-source engineering notes and cross-language algorithm repositories',
         ],
       },
       {
-        period: '2020 – 2025',
-        place: 'Bad Printer Studio · Shenzhen',
-        role: 'Founder',
-        logo: { src: `${import.meta.env.BASE_URL}images/bp.png`, alt: 'Bad Printer Studio' },
+        period: '2023 – 2024',
+        place: 'Multimodal AI & 3D Perception',
+        role: 'AIGC · Whisper Speech · 3D Object Detection',
         points: [
-          'Founder · team of 14',
-          'Clients: Honor of Kings / Trip.com / ByteDance / Kuaishou / VIVO / Tecno / Xiaomi / IM Motors…',
-          'Work: team management / creative direction / animation / development',
+          'Created go_subtitle (published on PyPI) for automated audio/video subtitle generation & translation via Whisper',
+          'Explored 3D vision (MMDetection3D), Stable Diffusion workflows, and local LLM media translation',
         ],
       },
       {
-        period: '2025 – Now',
-        place: 'Content Creator',
+        period: '2025',
+        place: 'High-Throughput LLM Serving & KV Cache',
+        role: 'vLLM · LMCache · GPU Systems',
+        points: [
+          'Deep-dived into high-throughput LLM serving, continuous batching, and distributed KV cache layers',
+          'Focused on GPU kernel efficiency, memory hierarchy optimization, and numerical correctness gates',
+        ],
+      },
+      {
+        period: '2026',
+        place: 'Rust + CUDA LLM Inference Engine',
+        role: 'Creator of vllm-oxide',
         groups: [
           {
-            heading: '小郑还挺忙',
-            logoImg: `${import.meta.env.BASE_URL}images/buzyzheng.png`,
-            sub: 'tech-DIY creator',
-            items: ['120K on Douyin · 87K on Bilibili · 23K on Xiaohongshu'],
-            links: SOCIAL_LINKS,
+            heading: 'vllm-oxide',
+            sub: 'Rust + Candle + Custom CUDA Kernels',
+            link: 'https://github.com/RedHeartSecretMan/vllm-oxide',
+            items: [
+              'Implemented continuous batching, paged KV cache, shared-prefix caching, and copy-on-write preemption',
+              'Validated BF16 inference on RTX 4080 with strict reference correctness gates',
+            ],
           },
         ],
       },
       {
         period: '2026 – Now',
-        place: 'Indie Developer',
-        groups: [{ logo: 'zooop', sub: 'AI creation platform', link: 'https://zooop.ai/' }],
+        place: 'Evidence-First Agent Systems',
+        role: 'Creator of dag-skill & a-share-research-skill',
+        groups: [
+          {
+            heading: 'RedHeartSecretMan',
+            sub: 'What → Why → How',
+            link: 'https://github.com/RedHeartSecretMan',
+            items: [
+              'dag-skill: Spec-and-Ticket DAG multi-agent orchestration with evidence-backed review & CAS integration',
+              'a-share-research-skill: Deterministic financial research CLI with explicit provenance & fail-closed identity',
+            ],
+            links: SOCIAL_LINKS,
+          },
+        ],
       },
     ],
   },
@@ -94,49 +99,64 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
     title: 'Résumé',
     entries: [
       {
-        period: '2013 – 2017',
-        place: '中山大学',
-        role: '软件工程 · 本科',
-      },
-      {
-        period: '2017 – 2020',
-        place: 'HOTSAR 工作室 · 上海',
-        role: '联合创始人',
-        logo: { src: `${import.meta.env.BASE_URL}images/hotsar.jpg`, alt: 'HOTSAR' },
+        period: '2020 – 2023',
+        place: '系统编程与算法筑基',
+        role: 'C / C++ · Python · 深度学习与计算机视觉',
         points: [
-          '联合创始人，团队人数 20+',
-          '服务客户：阿里系品牌、腾讯、网易、滴滴、华润、麦当劳…',
-          '负责：技术开发 / 创意策划 / 动画制作 / 团队管理',
+          '深耕系统编程、数据结构与深度学习底层机制，构建跨语言工程代码库与技术笔记体系',
+          '践行「What → Why → How」工程方法论，坚持以契约和证据驱动系统设计',
         ],
       },
       {
-        period: '2020 – 2025',
-        place: '坏打印机工作室 · 深圳',
-        role: '创始人',
-        logo: { src: `${import.meta.env.BASE_URL}images/bp.png`, alt: '坏打印机工作室' },
+        period: '2023 – 2024',
+        place: '多模态 AI 与 3D 视觉探索',
+        role: 'AIGC · 语音识别 · 3D 目标检测',
         points: [
-          '创始人，团队人数 14',
-          '服务客户：王者荣耀 / 携程 / 字节 / 快手 / VIVO / 传音 / 小米…',
-          '负责：团队管理 / 创意策划 / 动画制作 / 技术开发',
+          '开源并发布 PyPI 工具包 go_subtitle：基于 Whisper 实现音视频自动字幕提取与多语种翻译',
+          '探索 3D 视觉感知（MMDetection3D）、扩散生成模型与本地大模型实时字幕翻译工具链',
         ],
       },
       {
-        period: '2025 – 至今',
-        place: '自媒体博主',
+        period: '2025',
+        place: '高吞吐大模型推理与缓存架构',
+        role: 'vLLM · LMCache · GPU 系统优化',
+        points: [
+          '深入研究高吞吐 LLM 推理引擎架构、Continuous Batching 调度与分布式 KV Cache 加速层',
+          '聚焦 CUDA 算子优化、显存分页管理以及与参考实现对齐的数值正确性门禁',
+        ],
+      },
+      {
+        period: '2026',
+        place: 'Rust + CUDA 大模型推理引擎',
+        role: 'vllm-oxide 作者',
         groups: [
           {
-            heading: '小郑还挺忙',
-            logoImg: `${import.meta.env.BASE_URL}images/buzyzheng.png`,
-            sub: '科技 DIY 博主',
-            items: ['抖音 12 万 · B站 8.7 万 · 小红书 2.3 万 关注'],
-            links: SOCIAL_LINKS,
+            heading: 'vllm-oxide',
+            sub: 'Rust + Candle + 自定义 CUDA 算子',
+            link: 'https://github.com/RedHeartSecretMan/vllm-oxide',
+            items: [
+              '使用 Rust 从零构建支持 Continuous Batching、Paged KV Cache、Prefix Caching 与 CoW 抢占的推理引擎',
+              '在单卡 RTX 4080 完成 BF16 实测验证，建立严格的数值、行为与性能基准门禁',
+            ],
           },
         ],
       },
       {
         period: '2026 – 至今',
-        place: '独立开发',
-        groups: [{ logo: 'zooop', sub: 'AI 创作平台', link: 'https://zooop.ai/' }],
+        place: '证据驱动的智能体工程体系',
+        role: 'dag-skill & a-share-research-skill 作者',
+        groups: [
+          {
+            heading: 'RedHeartSecretMan',
+            sub: 'What → Why → How',
+            link: 'https://github.com/RedHeartSecretMan',
+            items: [
+              'dag-skill：基于 Spec-and-Ticket DAG 的多智能体协同调度、证据审查与 CAS 集成协议',
+              'a-share-research-skill：具备显式数据溯源、失败关闭身份校验与可复现估值谱系的确定性研究工具',
+            ],
+            links: SOCIAL_LINKS,
+          },
+        ],
       },
     ],
   },
