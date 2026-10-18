@@ -20,6 +20,13 @@ npm run lint       # ESLint (`any` is allowed in scene code)
 
 There are no tests. After editing, run `npm run build` and check the page in a browser.
 
+## Deployment
+
+Pushes to `main` publish through `.github/workflows/deploy.yml`. For a fresh fork,
+enable inherited workflows on the repository's Actions page; an `active` workflow
+in the API alone does not clear GitHub's fork-level restriction. Verify that a run
+with event `push` uses the pushed commit and finishes successfully.
+
 ## Architecture
 
 - Pure front-end SPA: `index.html` -> `src/main.tsx` -> `src/App.tsx`. No backend, no router.
