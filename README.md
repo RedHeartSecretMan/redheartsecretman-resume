@@ -72,7 +72,7 @@ npm run build      # 类型检查 + 打包到 dist/
 部署工作流 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) 监听 `main` 推送，也支持手动触发；它构建 `web/` 并发布到 GitHub Pages。`vite.config.ts` 使用 `base: './'`，产物也可以放到任意静态托管或子目录。
 
 - 本仓库 `redheartsecretman-resume` 维护简历内容，访问地址为 <https://me.redheartsecretman.top/>。
-- [redheartsecretman-landing](https://github.com/RedHeartSecretMan/redheartsecretman-landing) 维护 <https://redheartsecretman.top/> 的跳转页，以后可独立改为首页。
+- [redheartsecretman-landing](https://github.com/RedHeartSecretMan/redheartsecretman-landing) 提供 <https://redheartsecretman.top/> 的个人网站入口。
 - 简历域名在仓库 **Settings → Pages → Custom domain** 中配置；Actions 部署使用该设置。两个仓库分别发布，修改简历无需修改根域名跳转页。
 
 推送后请在 **Actions** 核对运行对应本次提交，不能只看较早的成功记录。若未生成部署任务，可在 **Deploy to GitHub Pages → Run workflow** 选择 `main`，或运行：

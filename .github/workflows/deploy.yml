@@ -1,4 +1,5 @@
 name: Deploy to GitHub Pages
+run-name: Publish resume (${{ github.event_name }}) - ${{ github.sha }}
 
 # 推送到 main 即自动构建 web/ 并发布到 GitHub Pages；也可在 Actions 页手动触发
 on:

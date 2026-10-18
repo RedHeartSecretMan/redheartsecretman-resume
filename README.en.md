@@ -67,7 +67,7 @@ When replacing the model, keep the `CameraAction` clip (24 fps), the `focus-0` t
 The deployment workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) is configured for pushes to `main` and manual dispatch. It builds `web/` and publishes it to GitHub Pages. `vite.config.ts` uses `base: './'`, so the build also works on any static host or in a subdirectory.
 
 - `redheartsecretman-resume` maintains the resume at <https://me.redheartsecretman.top/>.
-- [redheartsecretman-landing](https://github.com/RedHeartSecretMan/redheartsecretman-landing) maintains the redirect at <https://redheartsecretman.top/> and can become a standalone homepage later.
+- [redheartsecretman-landing](https://github.com/RedHeartSecretMan/redheartsecretman-landing) provides the personal website entry at <https://redheartsecretman.top/>.
 - The resume domain is configured in **Settings → Pages → Custom domain** and used by the Actions deployment. Each repository publishes independently.
 
 After pushing, verify that the Actions run uses the new commit, not an older successful deployment. If no run appears, select **Deploy to GitHub Pages → Run workflow → main**, or run:
