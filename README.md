@@ -3,13 +3,13 @@
 <p align="center"><b>滚动即运镜的 3D 个人简历与作品集。</b></p>
 
 <p align="center">
-  <a href="https://redheartsecretman.github.io/wanghao-3d-resume/">在线访问</a> ·
+  <a href="https://me.redheartsecretman.top/">在线访问</a> ·
   <a href="https://github.com/RedHeartSecretMan">GitHub</a> ·
   <a href="README.en.md">English</a>
 </p>
 
 <p align="center">
-  <a href="https://redheartsecretman.github.io/wanghao-3d-resume/"><img src="docs/preview.jpg" alt="首屏：3D 人物与 About Wang Hao 介绍" width="800"></a>
+  <a href="https://me.redheartsecretman.top/"><img src="docs/preview.jpg" alt="首屏：3D 人物与 About Wang Hao 介绍" width="800"></a>
 </p>
 
 我是王昊，一名 AI 系统工程师，按「What → Why → How」思考问题。这个网页把履历放进一个 3D 场景里：向下滚动时，镜头依次推到每段经历，最后进入作品画廊。
@@ -70,6 +70,10 @@ npm run build      # 类型检查 + 打包到 dist/
 ## 部署
 
 推送到 `main` 后，[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) 会构建 `web/` 并发布到 GitHub Pages。`vite.config.ts` 使用 `base: './'`，产物也可以放到任意静态托管或子目录。
+
+- 本仓库 `redheartsecretman-resume` 维护简历内容，访问地址为 <https://me.redheartsecretman.top/>。
+- [redheartsecretman-landing](https://github.com/RedHeartSecretMan/redheartsecretman-landing) 维护 <https://redheartsecretman.top/> 的跳转页，以后可独立改为首页。
+- 简历域名在仓库 **Settings → Pages → Custom domain** 中配置；Actions 部署使用该设置。两个仓库分别发布，修改简历无需修改根域名跳转页。
 
 ## 技术栈
 

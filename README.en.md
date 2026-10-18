@@ -3,13 +3,13 @@
 <p align="center"><b>A scroll-driven 3D resume and portfolio.</b></p>
 
 <p align="center">
-  <a href="https://redheartsecretman.github.io/wanghao-3d-resume/">Live site</a> ·
+  <a href="https://me.redheartsecretman.top/">Live site</a> ·
   <a href="https://github.com/RedHeartSecretMan">GitHub</a> ·
   <a href="README.md">简体中文</a>
 </p>
 
 <p align="center">
-  <a href="https://redheartsecretman.github.io/wanghao-3d-resume/"><img src="docs/preview.jpg" alt="Hero: the 3D character beside the About Wang Hao intro" width="800"></a>
+  <a href="https://me.redheartsecretman.top/"><img src="docs/preview.jpg" alt="Hero: the 3D character beside the About Wang Hao intro" width="800"></a>
 </p>
 
 I'm Wang Hao (王昊), an AI systems engineer who works through problems as What -> Why -> How. This site puts my resume inside a 3D scene: as you scroll, the camera moves to each chapter and finally into the works gallery.
@@ -65,6 +65,10 @@ When replacing the model, keep the `CameraAction` clip (24 fps), the `focus-0` t
 ## Deploy
 
 Pushing to `main` runs [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which builds `web/` and publishes it to GitHub Pages. `vite.config.ts` uses `base: './'`, so the build also works on any static host or in a subdirectory.
+
+- `redheartsecretman-resume` maintains the resume at <https://me.redheartsecretman.top/>.
+- [redheartsecretman-landing](https://github.com/RedHeartSecretMan/redheartsecretman-landing) maintains the redirect at <https://redheartsecretman.top/> and can become a standalone homepage later.
+- The resume domain is configured in **Settings → Pages → Custom domain** and used by the Actions deployment. Each repository publishes independently.
 
 ## Tech stack
 

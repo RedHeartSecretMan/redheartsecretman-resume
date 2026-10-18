@@ -1,7 +1,7 @@
 # 部署教程 ①：发布到 GitHub Pages（免费）
 
 > 目标：把这个 3D 简历发布成一个人人可访问的网址，比如
-> `https://你的用户名.github.io/wanghao-3d-resume/`。
+> `https://你的用户名.github.io/redheartsecretman-resume/`。
 >
 > 你只需要一个 GitHub 账号，**全程点鼠标，不用敲命令**。
 > 想用自己的域名？看另一篇 [《② 部署到 Cloudflare Pages》](2-部署到-Cloudflare-Pages.md)。
@@ -63,7 +63,7 @@
    https://你的GitHub用户名.github.io/仓库名/
    ```
 
-   例如王昊的就是 <https://redheartsecretman.github.io/wanghao-3d-resume/>。
+   本仓库已绑定自定义域名，王昊的简历地址为 <https://me.redheartsecretman.top/>。未绑定域名时，项目地址为 `https://你的用户名.github.io/redheartsecretman-resume/`。
 
 点开这个网址，你的 3D 简历就上线了 🎉
 
